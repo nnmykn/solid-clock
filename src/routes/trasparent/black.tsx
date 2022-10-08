@@ -1,7 +1,7 @@
 import { Title } from "solid-start";
 import { styled } from 'solid-styled-components'
 import { AppLayout } from '~/layouts/app-layout'
-import { createSignal, createEffect } from 'solid-js'
+import { createSignal, onCleanup, onMount } from 'solid-js'
 
 const Container = styled.div`
   display: block;
@@ -32,12 +32,16 @@ const Clock = styled.div`
 
 export default function Home() {
   const [time, setTime] = createSignal('')
-  createEffect(() => {
-    const timer = setInterval(() => {
+
+  let timer = 0
+
+  onMount(() => {
+    timer = setInterval(() => {
       setTime(new Date().toLocaleTimeString())
     }, 100)
-    return () => clearInterval(timer)
   })
+  onCleanup(() => clearInterval(timer))
+
   return (
     <AppLayout>
       <Title>Solid Clock</Title>
