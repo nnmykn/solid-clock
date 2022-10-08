@@ -16,7 +16,7 @@ import './style/global.css'
 
 export default function Root() {
   return (
-    <Html lang="en">
+    <Html lang="en" prefix="og: http://ogp.me/ns#">
       <Head>
         <Title>Solid Clock</Title>
         <Meta charset="utf-8" />
@@ -28,6 +28,11 @@ export default function Root() {
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
           rel="stylesheet"
         />
+      <Meta property="og:url" content="https://solid-clock.pages.dev/"/>
+      <Meta property="og:title" content="Solid Clock"/>
+      <Meta property="og:description" content="Simple Realtime Clock with SolidJS"/>
+      <Meta property="og:type" content="website"/>
+      <Meta property="og:image" content="https://solid-clock.pages.dev/ogp.png"/>
       </Head>
       <Body>
         <ErrorBoundary>
