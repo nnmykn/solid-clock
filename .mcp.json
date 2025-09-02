@@ -1,0 +1,69 @@
+{
+  "mcpServers": {
+    "puppeteer": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-puppeteer"
+      ]
+    },
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ]
+    },
+    "readability": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@mizchi/readability",
+        "--mcp"
+      ]
+    },
+    "serena": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "ide-assistant",
+        "--project",
+        "${PWD}"
+      ]
+    },
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ],
+      "env": {}
+    },
+    "deepwiki": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.deepwiki.com/sse"
+      ]
+    },
+    "todoist-mcp": {
+      "command": "/Users/kan/.local/share/mise/installs/node/24.1.0/bin/node",
+      "args": [
+        "/Users/kan/Nextcloud/SynologyDrive/DEVELOP/mcps/todoist-mcp/build/index.js"
+      ],
+      "env": {
+        "TODOIST_API_KEY": "3bc8e16f11f78055d116415b499629ef65e64bf5"
+      }
+    },
+    "codex": {
+      "type": "stdio",
+      "command": "codex",
+      "args": [
+        "mcp"
+      ]
+    }
+  }
+}
