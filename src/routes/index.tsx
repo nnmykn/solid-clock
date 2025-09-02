@@ -43,7 +43,7 @@ export default function Home() {
     const url = new URL(window.location.href)
 
     setOption({
-      bg: url.searchParams.get('bg') || "url('https://source.unsplash.com/random')",
+      bg: url.searchParams.get('bg') || "url('https://picsum.photos/4000')",
       color: url.searchParams.get('color') || "white",
       borderColor: url.searchParams.get('border-color') || "white"
     })
